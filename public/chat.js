@@ -7,7 +7,7 @@ var messages;
 window.onload = function() {
  
     messages = [];
-    socket = io.connect('https://lit-inlet-4843.herokuapp.com');
+    socket = io.connect('http://realhack-server.herokuapp.com');
     field = $(".field");
     sendButton = $(".send");
     content = $("#content");
