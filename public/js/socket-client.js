@@ -2,6 +2,9 @@ var socket;
 var map;
 var marker;
 var player;
+var chatinput;
+var sendBtn;
+var messages;
 
 function initialize() {
     var myLatlng = new google.maps.LatLng(22.933935, 80.614524);
@@ -15,7 +18,7 @@ function initialize() {
     marker = new google.maps.Marker({
         position: myLatlng,
         map: map,
-        title: 'Hello World!'
+        title: 'Agent'
     });
 }
 
@@ -33,6 +36,9 @@ window.onload = function() {
 
     socket = io.connect('http://realhack-server.herokuapp.com');
     player = document.getElementById("video_player_0");
+    chatinput = $("");
+    sendBtn = $("");
+    messages = [];
 
     socket.on('stream-client', function (data) {
         // latlngdata = data;
@@ -45,4 +51,16 @@ window.onload = function() {
         var url = jsondat.url;
         player.src = url;
     });
+
+    socket.on('chat-msg', function (data) {
+       console.log(data); 
+    });
+
+    $(sendBtn).click(function () {
+        var text = $(chatinput).val();
+        var username = $(usernameInput).val();
+        socket.emit("send-chat", {'user': username, 'text': text});
+    });
+
+
 }

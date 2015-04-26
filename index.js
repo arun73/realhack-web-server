@@ -17,7 +17,7 @@ app.get('/', function(request, response) {
 var io = require('socket.io').listen(app.listen(app.get('port')));
 
 io.sockets.on('connection', function (socket) {
-    socket.emit('message', { message: 'welcome to the chat' });
+    socket.emit('chat-msg', {text: 'welcome to the chat'});
     
     socket.on('streamdata', function (data) {
     	//console.log("Location data: " + data);
@@ -31,9 +31,9 @@ io.sockets.on('connection', function (socket) {
     //     io.sockets.emit('streamurl-client', {message: data})
     // });
 
-    socket.on('send', function (data) {
-    	console.log(data);
-        io.sockets.emit('message', data);
+    socket.on('send-chat', function (data) {
+    	// console.log(data);
+        io.sockets.emit('chat-msg', data);
     });
 });
 
