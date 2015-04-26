@@ -3,12 +3,12 @@ var app = express();
 
 app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
-app.set('view engine', "jade");
-app.engine('jade', require('jade').__express);
+//app.set('view engine', "jade");
+//app.engine('jade', require('jade').__express);
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(request, response) {
-	response.render("chat");
+	response.render("index");
 });
 
 var io = require('socket.io').listen(app.listen(app.get('port')));
@@ -24,6 +24,7 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('streamurl', function (data) {
     	console.log("Stream URL: " + data);
+        io.sockets.emit('streamurl-client', {message: data})
     });
 
     socket.on('send', function (data) {

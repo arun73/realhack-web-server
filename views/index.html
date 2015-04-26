@@ -1,0 +1,184 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/style.css"  />
+      <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/> 
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+      <script type="text/javascript" src="js/jquery.js"></script>
+      <script src="js/responsive.js"></script>
+      <script src="js/gmaps.js"></script>
+      <script>
+        function initialize() {
+          var myLatlng = new google.maps.LatLng(12.933935, 77.614524);
+          var mapOptions = {
+            zoom: 17,
+            center: myLatlng
+          }
+          var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+          var marker = new google.maps.Marker({
+              position: myLatlng,
+              map: map,
+              title: 'Hello World!'
+          });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+      </script>
+    </head>
+
+    <body>
+      <div class="row purple darken-4 topbar z-depth-3"> 
+        
+      </div>
+
+      <div class="row">
+        <div class="col s8 ">
+          <!--Video Stream-->
+          <div class="card z-depth-2">
+            <div class="card-image waves-effect waves-block waves-light">
+              <video controls autoplay id="video_player_0" class="video_player videoplayer ">
+                <source id="v_source" src="https://d3hvlzuuzo3w9w.cloudfront.net/kickflip-demo73/4ejvv9ll4y2a/d2e202ba-f326-46b5-be13-8a2db2bb484d/index.m3u8" type="application/x-mpegURL">
+              </video>
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Chat<i class="mdi-navigation-more-vert right"></i></span> 
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Card Title <i class="mdi-navigation-close right"></i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s4 z-depth-2 sidebar">
+          <div class="row">
+            <div class="col s12 map" id="map-canvas" >
+            </div>
+          </div>
+          <div class="row full">
+            <div class="col s8 offset-s2 controlToggle" id="up" onclick="alert("UP");">
+              <i class="fa fa-angle-up"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s4 controlToggle half" id="left" onclick="console.log("LEFT");">
+              <i class="fa fa-angle-left"></i>
+            </div>
+            <div class="col s4 offset-s4 controlToggle half" id="right" onclick="console.log("RIGHT");">
+              <i class="fa fa-angle-right"></i>
+            </div>
+          </div>
+          <div class="row full">
+            <div class="col s8 offset-s2 controlToggle" id="down" onclick="console.log("DOWN");">
+              <i class="fa fa-angle-down"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s8 offset-s2 controlToggle">
+              <a class="waves-effect waves-light btn modal-trigger " style="font-size:20px;" href="#modal1">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Trigger -->
+      
+
+    
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <div class="col s12 modaltop">
+            <i class="fa fa-angle-up"></i>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row detailsHolder">
+            <div class="col s6">
+              <h1 class="listingName">MAIRA VATIKA BHIWADI</h1>
+              <h1 class="listingSubText">Rs.7500 per sqyrd</h1>
+              <h1 class="listingSubText">Residential Plots (86 - 100 sqyrd)</h1>
+              <h1 class="listingSubText">Approved By  All leading banks</h1>
+              <h1 class="listingSubText">Floor allowed for construction 3 Floors</h1>
+            </div>
+            <div class="col s6">
+            </div>
+          </div>
+        </div>
+        <h1 class="amenitiesHeading">Amenities</h1>
+        <div class="row amenitiesHolder">
+          <div class="col s3">
+            <div class="row ">
+              <div class="col s12">
+                <img src="img/hospital11.png"/>
+              </div>
+              <div class="col s12">
+                <h1 class="amenitiesText">12.7Km</h1>
+              </div>
+            </div>
+          </div>
+          <div class="col s3">
+            <div class="row ">
+              <div class="col s12">
+                <img src="img/bus55.png"/>
+              </div>
+              <div class="col s12">
+                <h1 class="amenitiesText">2.4Km</h1>
+              </div>
+            </div>
+          </div>
+          <div class="col s3">
+            <div class="row ">
+              <div class="col s12">
+                <img src="img/graduation-cap2.png"/>
+              </div>
+              <div class="col s12">
+                <h1 class="amenitiesText">3.2Km</h1>
+              </div>
+            </div>
+          </div>
+          <div class="col s3">
+            <div class="row ">
+              <div class="col s12">
+                <img src="img/subway1.png"/>
+              </div>
+              <div class="col s12">
+                <h1 class="amenitiesText">13.8Km</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+        </div>
+      </div>
+      
+      <!--Import jQuery before materialize.js-->
+      <script>
+        $(document).ready(function() {
+          $('#up').click(function(e) {  
+            console.log("Clicked: Up");
+          });
+          $('#down').click(function(e) {  
+            console.log("Clicked: Down");
+          });
+          $('#left').click(function(e) {  
+            console.log("Clicked: Left");
+          });
+          $('#right').click(function(e) {  
+            console.log("Clicked: right");
+          });
+          $('#right').click(function(e) {  
+            console.log("Clicked: right");
+          });
+          $('.modal-trigger').leanModal();
+        });
+      </script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/Chart.min.js"></script>
+      
+    </body>
+  </html>
