@@ -9,7 +9,7 @@
   "dependencies": {
     "express": "~4.9.x",
     "socket.io": "latest",
-    "jade": "latest"
+    "ejs": "latest"
   },
   "engines": {
     "node": "0.12.2"
