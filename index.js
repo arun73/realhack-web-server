@@ -8,7 +8,8 @@ app.set('view engine', "html");
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(request, response) {
-	response.render("index.");
+	// response.render("index.");
+    response.send('hi');
 });
 
 var io = require('socket.io').listen(app.listen(app.get('port')));
