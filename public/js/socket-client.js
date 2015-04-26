@@ -36,8 +36,8 @@ window.onload = function() {
 
     socket = io.connect('http://realhack-server.herokuapp.com');
     player = document.getElementById("video_player_0");
-    chatinput = $("");
-    sendBtn = $("");
+    chatinput = $("#icon_prefix2");
+    sendBtn = $("#sendButton");
     messages = [];
 
     socket.on('stream-client', function (data) {
@@ -58,8 +58,8 @@ window.onload = function() {
 
     $(sendBtn).click(function () {
         var text = $(chatinput).val();
-        var username = $(usernameInput).val();
-        socket.emit("send-chat", {'user': username, 'text': text});
+        // var username = $(usernameInput).val();
+        socket.emit("send-chat", {'user': 'blah', 'text': text});
     });
 
 
