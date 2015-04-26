@@ -2,7 +2,7 @@ var socket;
 var map;
 
 function initialize() {
-    var myLatlng = new google.maps.LatLng(12.933935, 77.614524);
+    var myLatlng = new google.maps.LatLng(22.933935, 80.614524);
     var mapOptions = {
         zoom: 17,
         center: myLatlng
