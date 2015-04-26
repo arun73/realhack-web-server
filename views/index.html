@@ -37,7 +37,7 @@
               <div class="row">
                 <div class="input-field col s12">
                   <i class="mdi-editor-mode-edit prefix"></i>
-                  <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                  <input type="text" id="icon_prefix2" class="materialize-textarea" />
                   <label for="icon_prefix2">Message</label>
                   <div class="btn" id="sendButton">
                     <span>Send</span>
@@ -152,37 +152,7 @@
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
         </div>
       </div>
-      
-      <!--Import jQuery before materialize.js-->
-      <script>
-        $(document).ready(function(){
-          // var textarea = $('#icon_prefix2');
-          // $("#sendButton").click(function () {
-          //     $("#space").append('<div style="height: 40px; margin:5px"><h1 style="display:block; color:#1e1e1e; text-align: right; font-size:20px">'+$(textarea).val()+'</h1><h2 style="display:block; color:#1e1e1e; text-align: right; font-size:15px"></h2></div>');
-          //     $(textarea).val("");
-          // });
-      });
-      </script>
-      <script>
-        $(document).ready(function() {
-          $('#up').click(function(e) {  
-            console.log("Clicked: Up");
-          });
-          $('#down').click(function(e) {  
-            console.log("Clicked: Down");
-          });
-          $('#left').click(function(e) {  
-            console.log("Clicked: Left");
-          });
-          $('#right').click(function(e) {  
-            console.log("Clicked: right");
-          });
-          $('#right').click(function(e) {  
-            console.log("Clicked: right");
-          });
-          $('.modal-trigger').leanModal();
-        });
-      </script>
+
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script type="text/javascript" src="js/Chart.min.js"></script>
       

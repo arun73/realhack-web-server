@@ -40,6 +40,8 @@ window.onload = function() {
     sendBtn = $("#sendButton");
     messages = [];
 
+    $('.modal-trigger').leanModal();
+
     socket.on('stream-client', function (data) {
         // latlngdata = data;
         console.log(data);
