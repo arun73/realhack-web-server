@@ -58,6 +58,8 @@ window.onload = function() {
 
     $(sendBtn).click(function () {
         var text = $(chatinput).val();
+        if (text.trim == '')
+            return;
         // var username = $(usernameInput).val();
         socket.emit("send-chat", {'user': 'blah', 'text': text});
         $(chatinput).val("");
