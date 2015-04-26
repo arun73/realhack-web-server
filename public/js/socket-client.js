@@ -1,5 +1,6 @@
 var socket;
 var map;
+var marker;
 
 function initialize() {
     var myLatlng = new google.maps.LatLng(22.933935, 80.614524);
@@ -10,7 +11,7 @@ function initialize() {
 
     map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
-    var marker = new google.maps.Marker({
+    marker = new google.maps.Marker({
         position: myLatlng,
         map: map,
         title: 'Hello World!'
@@ -37,5 +38,6 @@ window.onload = function() {
         var jsondat = JSON.parse(data);
         var center = new google.maps.LatLng(jsondat.latitude, jsondat.longitude);
         map.panTo(center);
+        marker.setPosition(center);
     });
 }
