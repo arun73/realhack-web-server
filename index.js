@@ -16,8 +16,8 @@ var io = require('socket.io').listen(app.listen(app.get('port')));
 io.sockets.on('connection', function (socket) {
     socket.emit('message', { message: 'welcome to the chat' });
     
-    socket.on('locdata', function (data) {
-    	console.log("Location data: " + data);
+    socket.on('streamdata', function (data) {
+    	//console.log("Location data: " + data);
     	io.sockets.emit('locdata-client', data);
     	io.sockets.emit('message', {message: data});
     });
