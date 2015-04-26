@@ -21,14 +21,15 @@ io.sockets.on('connection', function (socket) {
     
     socket.on('streamdata', function (data) {
     	//console.log("Location data: " + data);
-    	io.sockets.emit('locdata-client', data);
-    	io.sockets.emit('message', {message: data});
+        var jsondat = JSON.parse(data);
+    	io.sockets.emit('stream-client', data);
+    	// io.sockets.emit('message', {message: data});
     });
 
-    socket.on('streamurl', function (data) {
-    	console.log("Stream URL: " + data);
-        io.sockets.emit('streamurl-client', {message: data})
-    });
+    // socket.on('streamurl', function (data) {
+    // 	console.log("Stream URL: " + data);
+    //     io.sockets.emit('streamurl-client', {message: data})
+    // });
 
     socket.on('send', function (data) {
     	console.log(data);

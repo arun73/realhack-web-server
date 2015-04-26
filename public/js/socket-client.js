@@ -31,11 +31,11 @@ window.onload = function() {
 
     socket = io.connect('http://realhack-server.herokuapp.com');
 
-    socket.on('locdata-client', function (data) {
+    socket.on('stream-client', function (data) {
         // latlngdata = data;
         console.log(data);
-        var latlngdata = JSON.parse(data);
-        var center = new google.maps.LatLng(latlngdata.latitude, latlngdata.longitude);
+        var jsondat = JSON.parse(data);
+        var center = new google.maps.LatLng(jsondat.latitude, jsondat.longitude);
         map.panTo(center);
     });
 }
