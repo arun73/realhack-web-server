@@ -33,7 +33,7 @@ window.onload = function() {
 
     socket.on('locdata-client', function (data) {
         // latlngdata = data;
-        // console.log(data);
+        console.log(data);
         var latlngdata = JSON.parse(data);
         var center = new google.maps.LatLng(latlngdata.latitude, latlngdata.longitude);
         map.panTo(center);
