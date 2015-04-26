@@ -53,12 +53,16 @@ window.onload = function() {
     });
 
     socket.on('chat-msg', function (data) {
-       console.log(data); 
+       console.log(data);
+       var jsondat = JSON.parse(data);
+       $("#space").append('<div style="height: 40px; margin:5px"><h1 style="display:block; color:#1e1e1e; text-align: right; font-size:20px">'
+        + jsondat.text
+        + '</h1><h2 style="display:block; color:#1e1e1e; text-align: right; font-size:15px"></h2></div>');
     });
 
     $(sendBtn).click(function () {
         var text = $(chatinput).val();
-        if (text.trim == '')
+        if (text.trim() == '')
             return;
         // var username = $(usernameInput).val();
         socket.emit("send-chat", {'user': 'blah', 'text': text});
