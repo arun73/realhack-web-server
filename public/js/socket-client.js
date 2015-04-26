@@ -60,6 +60,7 @@ window.onload = function() {
         var text = $(chatinput).val();
         // var username = $(usernameInput).val();
         socket.emit("send-chat", {'user': 'blah', 'text': text});
+        $(chatinput).val("");
     });
 
 
