@@ -1,6 +1,7 @@
 var socket;
 var map;
 var marker;
+var player;
 
 function initialize() {
     var myLatlng = new google.maps.LatLng(22.933935, 80.614524);
@@ -31,6 +32,7 @@ window.onload = function() {
     loadMaps();
 
     socket = io.connect('http://realhack-server.herokuapp.com');
+    player = document.getElementById("video_player_0");
 
     socket.on('stream-client', function (data) {
         // latlngdata = data;
@@ -39,5 +41,8 @@ window.onload = function() {
         var center = new google.maps.LatLng(jsondat.latitude, jsondat.longitude);
         map.panTo(center);
         marker.setPosition(center);
+
+        var url = jsondat.url;
+        player.src = url;
     });
 }
