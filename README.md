@@ -1,1 +1,1 @@
-This web app was used during Realhack 2015 - Housing.com hackthon
+This web app was used during Realhack 2015 - Housing.com hackathon
